@@ -3,25 +3,27 @@ import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 import CardsGrid from "../components/CardsGrid";
 import NuestrosClientes from "../components/NuestrosClientes";
-
+import imgColegios from "../assets/img/colegios.jpg";
+import imgEmpresas from "../assets/img/Empresas.jpg";
+import imgClubes from "../assets/img/Clubes.jpg";
 // Secciones destacadas
 const sections = [
   {
     title: "Colegios",
     text: "Uniformes escolares durables, cómodos y listos para el uso diario: remeras, chombas, buzos y más.",
-    img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop",
+    img: imgColegios,
     href: "/colegios",
   },
   {
     title: "Empresas",
     text: "Imagen corporativa prolija y profesional para todo tu equipo: camisas, chombas, pantalones y ropa de trabajo.",
-    img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1200&auto=format&fit=crop",
+    img: imgEmpresas,
     href: "/empresas",
   },
   {
     title: "Clubes",
     text: "Indumentaria deportiva personalizada: remeras técnicas, shorts, buzos y conjuntos para clubes y gimnasios.",
-    img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop",
+    img: imgClubes,
     href: "/clubes",
   },
 ];

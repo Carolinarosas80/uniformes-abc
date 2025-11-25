@@ -1,52 +1,91 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import CardsGrid from "../components/CardsGrid";
 
-const items = [
-  {
-    title: "Chombas y remeras",
-    text: "Confección en algodón y poliéster en colores institucionales, listas para el uso diario.",
-    img: "https://images.unsplash.com/photo-1519378058457-4c29a0a2ef48?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    title: "Buzos y camperas",
-    text: "Abrigos escolares cómodos, con bordado del escudo y terminaciones profesionales.",
-    img: "https://images.unsplash.com/photo-1520975911878-8a69d3d7d32b?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    title: "Pantalones y shorts",
-    text: "Textiles resistentes y confortables, pensados para el movimiento diario.",
-    img: "https://images.unsplash.com/photo-1604882736241-8f68d2a76e45?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    title: "Polleras y uniformes deportivos",
-    text: "Prendas livianas y transpirables para educación física y uso escolar.",
-    img: "https://images.unsplash.com/photo-1524492449092-2d8c3c0317c1?q=80&w=1200&auto=format&fit=crop"
-  }
-];
+// importa las imágenes desde src/assets/img
+import chombas from "../assets/img/chombasyremeras.jpg";
+import camperas from "../assets/img/camperasybuzoscolegios.jpg";
+import polleras from "../assets/img/polleras.jpg"; 
+import shorts from "../assets/img/shortypantalones.jpg";
 
 export default function Colegios() {
+  const gallery = [
+    { src: chombas, alt: "Chombas y remeras escolares" },
+    { src: camperas, alt: "Camperas y buzos escolares" },
+    { src: polleras, alt: "Faldas y polleras escolares" },
+    { src: shorts, alt: "Shorts y pantalones deportivos" },
+  ];
+
   return (
     <>
       <Helmet>
-        <title>Colegios | ABC Uniformes</title>
+        <title>Uniformes Escolares | ABC Uniformes</title>
         <meta
           name="description"
-          content="Uniformes escolares personalizados para colegios: chombas, remeras, buzos, pantalones, shorts y polleras deportivas."
+          content="Uniformes escolares personalizados: remeras, chombas, buzos, camperas y pantalones. Calidad, bordado profesional y entrega puntual."
         />
+        <meta
+          name="keywords"
+          content="uniformes escolares, remeras escolares, chombas escolares, buzos escolares, uniformes para colegios, ABC Uniformes"
+        />
+        <meta property="og:title" content="Uniformes Escolares | ABC Uniformes" />
+        <meta
+          property="og:description"
+          content="Confección de uniformes escolares de calidad: remeras, buzos, pantalones y más. Personalización con bordado o estampado."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://abcuniformes.com.ar/colegios" />
       </Helmet>
 
-      <section className="section">
-        <div className="container">
-          <h2>Colegios</h2>
-          <p>
-            Uniformes escolares diseñados para acompañar el día a día de alumnos y docentes, 
-            combinando comodidad, durabilidad e imagen institucional.
-          </p>
+      <main className="colegios-page container">
+        <h1>Uniformes escolares personalizados</h1>
 
-          <CardsGrid items={items} />
-        </div>
-      </section>
+        <p className="page-intro">
+          En ABC Uniformes confeccionamos uniformes escolares con telas de alta calidad,
+          durabilidad y comodidad para el uso diario. Remeras, chombas, buzos, camperas y
+          pantalones con opción de bordado o estampado del escudo institucional.
+        </p>
+
+        {/* GALERÍA / IMÁGENES DESTACADAS */}
+        <section className="section">
+          <div className="gallery">
+            {gallery.map((item, idx) => (
+              <figure className="gallery-item" key={idx}>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>{item.alt}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        {/* contenido adicional (cards) */}
+        <section className="section">
+          <div className="grid">
+            <div className="card">
+              <div className="content">
+                <h3>Remeras y chombas</h3>
+                <p>Algodón y pique con opción de bordado del escudo.</p>
+              </div>
+            </div>
+            <div className="card">
+              <div className="content">
+                <h3>Buzos y camperas</h3>
+                <p>Modelos cálidos y duraderos, con cierre o canguro.</p>
+              </div>
+            </div>
+            <div className="card">
+              <div className="content">
+                <h3>Pantalones y deportivos</h3>
+                <p>Shorts, jogging y conjuntos deportivos para educación física.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

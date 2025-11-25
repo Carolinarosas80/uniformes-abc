@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import fotoHero from "../assets/img/fotoprincipalempresas.jpg";
 export default function Hero() {
   return (
     <section className="hero">
@@ -39,7 +39,7 @@ export default function Hero() {
         {/* Imagen hero */}
         <div className="image">
           <img
-            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1400&auto=format&fit=crop"
+            src={fotoHero}
             alt="Uniformes de trabajo y corporativos"
           />
         </div>
