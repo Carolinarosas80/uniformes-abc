@@ -1,47 +1,71 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import CardsGrid from "../components/CardsGrid";
 
-const items = [
-  {
-    title: "Remeras personalizadas",
-    text: "Para locales, eventos, promociones o pequeños negocios.",
-    img: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    title: "Buzos y chalecos",
-    text: "Abrigo personalizado con tu marca, ideal para atención al público.",
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    title: "Camperas y camperones",
-    text: "Gastronomía, talleres, logística y rubros con uso intensivo.",
-    img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop"
-  }
-];
+import comerciosRopa from "../assets/img/comerciosropa.jpg";
+import delantalesCofias from "../assets/img/delantalesycofias.jpg";
+import buzosCamisasChalecos from "../assets/img/ropadetrabajo.jpg";
 
 export default function Comercios() {
+  const gallery = [
+    { img: comerciosRopa, title: "Remeras personalizadas" },
+    { img: delantalesCofias, title: "Delantales y coﬁas" },
+    { img: buzosCamisasChalecos, title: "Buzos, camisas y chalecos" },
+  ];
+
   return (
-    <>
+    <div className="comercios-page">
       <Helmet>
-        <title>Comercios | ABC Uniformes</title>
+        <title>Uniformes para Comercios | ABC Uniformes</title>
         <meta
           name="description"
-          content="Indumentaria personalizada para comercios, pequeños negocios, eventos y emprendedores."
+          content="Uniformes personalizados para comercios: remeras estampadas, delantales, cofias, buzos, chalecos y camisas. Calidad y confección profesional."
         />
       </Helmet>
 
-      <section className="section">
-        <div className="container">
-          <h2>Comercios</h2>
-          <p>
-            Uniformes y prendas personalizadas para que tu comercio se destaque, 
-            manteniendo una imagen prolija y coherente con tu marca.
-          </p>
+      <h1>Uniformes para Comercios</h1>
 
-          <CardsGrid items={items} />
+      <p className="page-intro">
+        Diseñamos y confeccionamos uniformes para comercios de todo el país.
+        Personalizamos cada prenda con estampado, bordado o DTF, cuidando la
+        presentación profesional del equipo.
+      </p>
+
+      {/* Galería */}
+      <section className="gallery">
+        {gallery.map((item, index) => (
+          <figure key={index} className="gallery-item">
+            <img src={item.img} alt={item.title} />
+            <figcaption>{item.title}</figcaption>
+          </figure>
+        ))}
+      </section>
+
+      {/* Cards de información */}
+      <section className="info-cards">
+        <div className="info-card">
+          <h3>Personalización completa</h3>
+          <p>
+            Realizamos estampado, bordado y DTF para ofrecer la mejor calidad
+            en cada uniforme. Adaptamos los diseños a la identidad de tu comercio.
+          </p>
+        </div>
+
+        <div className="info-card">
+          <h3>Calidad y confort</h3>
+          <p>
+            Usamos telas resistentes, cómodas y pensadas para uso intensivo:
+            tusor, gabardina, algodón peinado y más.
+          </p>
+        </div>
+
+        <div className="info-card">
+          <h3>Atención personalizada</h3>
+          <p>
+            Te asesoramos en talles, colores, materiales y técnicas de impresión
+            para que el resultado sea profesional y duradero.
+          </p>
         </div>
       </section>
-    </>
+    </div>
   );
 }
