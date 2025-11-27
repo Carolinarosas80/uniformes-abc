@@ -16,6 +16,7 @@ import uthgra from "../assets/logos/uthgra.jpg";
 import jn from "../assets/logos/jn.jpg";
 import aitue from "../assets/logos/aitue.jpg";
 import oip  from "../assets/logos/oip.jpg";
+import rosmi from "../assets/logos/rosmi.jpg";
 
 export default function NuestrosClientes() {
 
@@ -34,10 +35,11 @@ export default function NuestrosClientes() {
     {src: inmaculada, alt:"Inmaculada Concepción" },
     {src: ib, alt:"IB" },
     {src: rossi, alt:"ROSSI" },
-    { src: uthgra, alt: "UTHGRA" },
-    { src: jn, alt: "JN" },
-    { src: aitue, alt: "Aitue" },
+    {src: uthgra, alt: "UTHGRA" },
+    {src: jn, alt: "JN" },
+    {src: aitue, alt: "Aitue" },
     {src: oip , alt:"OIP" },
+    {src: rosmi, alt:"Rosmi"},
   ];
   return (
     <section className="section clientes" aria-label="Empresas que confían en nosotros">
