@@ -9,10 +9,10 @@ import camperones from "../assets/img/camperon.jpg";
 
 export default function Empresas() {
   const gallery = [
-    { src: camisas, alt: "Camisas y chombas corporativas" },
-    { src: ambos, alt: "Conjuntos corporativos (ambos)" },
-    { src: pantalones, alt: "Pantalones de obra y ropa técnica" },
-    { src: camperones, alt: "Camperones y prendas exteriores" },
+    { src: camisas, alt: "Camisas y chombas corporativas y de trabajo " },
+    { src: ambos, alt: "Chaquetas, pantalones y ambos" },
+    { src: pantalones, alt: "Pantalones y bermudas" },
+    { src: camperones, alt: "Camperones, camperas y chalecos " },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function Empresas() {
 
         <p className="page-intro">
           En ABC Uniformes confeccionamos indumentaria corporativa para distintos rubros:
-          chombas y camisas para atención al público, pantalones técnicos para obra e
+          chombas y camisas para atención al público, pantalones  para obra e
           industria, y camperones para trabajo en exterior. Ofrecemos bordado, estampado
           y soluciones por volumen.
         </p>
@@ -64,20 +64,20 @@ export default function Empresas() {
             <div className="card">
               <div className="content">
                 <h3>Chombas y camisas</h3>
-                <p>Modelos en pique y popelina para atención al cliente y staff.</p>
+                <p>Chombas de  pique y  jersey de algodón, camisas en  batista  para atención al cliente y staff.</p>
               </div>
             </div>
 
             <div className="card">
               <div className="content">
-                <h3>Pantalones técnicos</h3>
+                <h3>Pantalones de trabajo </h3>
                 <p>Resistencia y confort para entornos industriales y de obra.</p>
               </div>
             </div>
 
             <div className="card">
               <div className="content">
-                <h3>Camperones y ropa exterior</h3>
+                <h3>Camperones, Camperas y chalecos  </h3>
                 <p>Prendas de abrigo y protección para trabajo al aire libre.</p>
               </div>
             </div>

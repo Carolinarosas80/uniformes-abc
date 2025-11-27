@@ -6,11 +6,16 @@ import centraloeste from "../assets/logos/centraloeste.jpg";
 import fundacionguemes from "../assets/logos/fundacionguemes.jpg";
 import granix from "../assets/logos/granix.jpg";
 import pedidosya from "../assets/logos/pedidosya.jpg";
+import rossi from "../assets/logos/rossi.jpg";
 import rubendario from "../assets/logos/rubendario.jpg";
 import obras from "../assets/logos/obras.jpg";
 import sagb from "../assets/logos/sagb.jpg";
 import inmaculada from "../assets/logos/inmaculada.jpg";
-import isa from "../assets/logos/isa.jpg";
+import ib from "../assets/logos/ib.jpg";
+import uthgra from "../assets/logos/uthgra.jpg";
+import jn from "../assets/logos/jn.jpg";
+import aitue from "../assets/logos/aitue.jpg";
+import oip  from "../assets/logos/oip.jpg";
 
 export default function NuestrosClientes() {
 
@@ -27,7 +32,12 @@ export default function NuestrosClientes() {
     {src: obras, alt: "Obras Sanitarias" },
     {src: sagb, alt:"SAGB" },
     {src: inmaculada, alt:"Inmaculada Concepción" },
-    {src: isa, alt:"ISA" },
+    {src: ib, alt:"IB" },
+    {src: rossi, alt:"ROSSI" },
+    { src: uthgra, alt: "UTHGRA" },
+    { src: jn, alt: "JN" },
+    { src: aitue, alt: "Aitue" },
+    {src: oip , alt:"OIP" },
   ];
   return (
     <section className="section clientes" aria-label="Empresas que confían en nosotros">

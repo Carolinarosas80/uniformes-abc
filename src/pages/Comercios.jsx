@@ -71,7 +71,7 @@ export default function Comercios() {
             <h3>Calidad y confort</h3>
             <p>
               Usamos telas resistentes, cómodas y pensadas para uso intensivo:
-              tusor, gabardina, algodón peinado y más.
+              Gabardina, algodón ,jean , alpacuna y más.
             </p>
           </div>
 

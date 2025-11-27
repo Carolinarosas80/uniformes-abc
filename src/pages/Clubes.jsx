@@ -61,8 +61,8 @@ export default function Clubes() {
           <div className="grid">
             <div className="card">
               <div className="content">
-                <h3>Remeras técnicas</h3>
-                <p>Telas respirables y corte atlético para rendimiento.</p>
+                <h3>Remeras y musculosas </h3>
+                <p>Telas tecnicas.</p>
               </div>
             </div>
 

@@ -42,7 +42,7 @@ export default function Colegios() {
         <p className="page-intro">
           En ABC Uniformes confeccionamos uniformes escolares con telas de alta calidad,
           durabilidad y comodidad para el uso diario. Remeras, chombas, buzos, camperas y
-          pantalones con opción de bordado o estampado del escudo institucional.
+          pantalones con opción de bordado , estampado o sublimado del logo.
         </p>
 
         {/* GALERÍA / IMÁGENES DESTACADAS */}
@@ -68,19 +68,19 @@ export default function Colegios() {
             <div className="card">
               <div className="content">
                 <h3>Remeras y chombas</h3>
-                <p>Algodón y pique con opción de bordado del escudo.</p>
+                <p>Jersey de algodón  o pique con opción de bordado, sublimado o estampado  del escudo.</p>
               </div>
             </div>
             <div className="card">
               <div className="content">
                 <h3>Buzos y camperas</h3>
-                <p>Modelos cálidos y duraderos, con cierre o canguro.</p>
+                <p>Buzos y camperas  con cierre , canguros o cuello redondo .</p>
               </div>
             </div>
             <div className="card">
               <div className="content">
                 <h3>Pantalones y deportivos</h3>
-                <p>Shorts, jogging y conjuntos deportivos para educación física.</p>
+                <p>Pantalones , Shorts y conjuntos deportivos.</p>
               </div>
             </div>
           </div>

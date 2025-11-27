@@ -38,11 +38,11 @@ export default function Footer() {
           <p>
             <FaInstagram />{" "}
             <a
-              href="https://instagram.com/abcuniformes.arg"
+              href="https://instagram.com/abc.uniformes"
               target="_blank"
               rel="noreferrer"
             >
-              @abcuniformes.arg
+              @abc.uniformes
             </a>
           </p>
         </div>
