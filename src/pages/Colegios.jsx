@@ -11,7 +11,7 @@ export default function Colegios() {
   const gallery = [
     { src: chombas, alt: "Chombas y remeras escolares" },
     { src: camperas, alt: "Camperas y buzos escolares" },
-    { src: polleras, alt: "Faldas y polleras escolares" },
+    { src: polleras, alt: "Polleras escolares y polleras deportivas" },
     { src: shorts, alt: "Shorts y pantalones deportivos" },
   ];
 
@@ -80,7 +80,7 @@ export default function Colegios() {
             <div className="card">
               <div className="content">
                 <h3>Pantalones y deportivos</h3>
-                <p>Pantalones , Shorts y conjuntos deportivos.</p>
+                <p>Pantalones , Shorts y conjuntos deportivos, realizados en friza y deportivo frizado y sin frizar.</p>
               </div>
             </div>
           </div>

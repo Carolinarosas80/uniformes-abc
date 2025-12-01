@@ -64,7 +64,7 @@ export default function Empresas() {
             <div className="card">
               <div className="content">
                 <h3>Chombas y camisas</h3>
-                <p>Chombas de  pique y  jersey de algodón, camisas en  batista  para atención al cliente y staff.</p>
+                <p>Chombas de  pique y  jersey de algodón, camisas en  batista , y camisas de trabajo  en gabardina ,  para atención al cliente y staff.</p>
               </div>
             </div>
 

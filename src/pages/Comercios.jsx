@@ -62,7 +62,7 @@ export default function Comercios() {
           <div className="info-card">
             <h3>Personalización completa</h3>
             <p>
-              Realizamos estampado, bordado y DTF para ofrecer la mejor calidad
+              Realizamos estampado, bordado , sublimado y DTF para ofrecer la mejor calidad
               en cada uniforme. Adaptamos los diseños a la identidad de tu comercio.
             </p>
           </div>

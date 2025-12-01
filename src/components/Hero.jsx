@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import fotoHero from "../assets/img/fotoprincipalempresas.jpg";
+import fotoHero from "../assets/logos/logoabc.jpg";
 export default function Hero() {
   return (
     <section className="hero">
