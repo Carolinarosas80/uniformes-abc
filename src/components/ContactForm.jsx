@@ -21,15 +21,25 @@ export default function ContactForm() {
     const porQuien = data.get("who") || "";
     const mensaje = data.get("message") || "";
 
-    try {
-      // 👉 ENVÍO POR EMAILJS (GMAIL)
+    try { // envío de mail al equipo de ABC Uniformes
       await emailjs.sendForm(
-        "service_xxxxxx",     // 🔹 tu Service ID de EmailJS
-        "template_xxxxxx",    // 🔹 tu Template ID
-        formEl,
-        "public_key_xxxxxx"   // 🔹 tu Public Key
-      );
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
+  formEl,
+  {
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  }
+);
 
+// auto reply
+await emailjs.sendForm(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_REPLY,
+  formEl,
+  {
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  }
+);
       // 👉 ARMAMOS MENSAJE PARA WHATSAPP
       const whatsappMessage = `
 Hola, soy ${nombre}.
