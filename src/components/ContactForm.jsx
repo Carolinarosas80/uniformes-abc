@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
@@ -6,69 +6,33 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
+  // 🔑 Inicializamos EmailJS UNA SOLA VEZ
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setSent(false);
 
     const formEl = formRef.current;
-    const data = new FormData(formEl);
 
-    const nombre = data.get("name") || "";
-    const email = data.get("email") || "";
-    const telefono = data.get("phone") || "";
-    const categoria = data.get("category") || "";
-    const porQuien = data.get("who") || "";
-    const mensaje = data.get("message") || "";
-
-    try { // envío de mail al equipo de ABC Uniformes
+    try {
+      // 📩 ÚNICO ENVÍO: mail al cliente
       await emailjs.sendForm(
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
-  formEl,
-  {
-    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-  }
-);
-
-// auto reply
-await emailjs.sendForm(
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_REPLY,
-  formEl,
-  {
-    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-  }
-);
-      // 👉 ARMAMOS MENSAJE PARA WHATSAPP
-      const whatsappMessage = `
-Hola, soy ${nombre}.
-
-Motivo de la consulta: ${categoria}
-Por quién consulto: ${porQuien}
-
-Mensaje:
-${mensaje}
-
-Email: ${email}
-Teléfono: ${telefono}
-
-(Envié también un formulario desde la web de ABC Uniformes)
-      `.trim();
-
-      // Tu número de WhatsApp en formato internacional: 54 + 11 + número
-      const phone = "541135078079"; // 011 3507 8079
-      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
-        whatsappMessage
-      )}`;
-
-      window.open(waUrl, "_blank");
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
+        formEl
+      );
 
       setSent(true);
       formEl.reset();
     } catch (err) {
-      console.error(err);
-      alert("No se pudo enviar el formulario. Revisá la configuración de EmailJS.");
+      console.error("EmailJS ERROR:", err);
+      alert(
+        "No se pudo enviar el formulario. Por favor, intentá nuevamente."
+      );
     } finally {
       setLoading(false);
     }
@@ -131,13 +95,9 @@ Teléfono: ${telefono}
             />
 
             <label style={{ fontSize: "0.85rem", color: "#666" }}>
-              Adjuntar archivo (opcional: logo, listado de prendas, etc.)
+              Adjuntar archivo (opcional)
             </label>
-            <input
-              className="file"
-              type="file"
-              name="attachment"
-            />
+            <input className="file" type="file" name="attachment" />
 
             <button className="btn" type="submit" disabled={loading}>
               {loading ? "Enviando..." : "Enviar formulario"}
@@ -146,7 +106,7 @@ Teléfono: ${telefono}
         ) : (
           <p>
             <strong>¡Gracias!</strong> Tu consulta fue enviada correctamente.
-            Te vamos a responder por mail o WhatsApp.
+            Te vamos a responder a la brevedad.
           </p>
         )}
       </div>
